@@ -30,7 +30,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
+      - name: Build project
         run: npm run build
 
       - name: Setup Pages
@@ -39,8 +39,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist  # Важно: указываем папку dist, которую создает Vite
+          path: ./dist  
 
       - name: Deploy
         id: deployment
-        uses: actions/deploy-pages@v3
+        uses: actions/deploy-pages@v2
