@@ -1,0 +1,147 @@
+@use '../../styles/variables.scss' as *;
+@use '../../styles/mixins.scss' as *;
+
+
+.burger {
+    height: 100%;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0px;
+    left: -100vh;
+    background-color: $color-secondary;  
+    box-shadow: $modal-shadow;
+    padding: 24px;
+    gap: 48px;
+    box-sizing: border-box;
+    z-index: 2;
+    transition: left 0.5s ease;
+
+    &_open{    
+        left: 0vh;
+    }
+    .burger__list {
+        
+        display: flex;
+        flex-direction: column;
+        gap: 32px
+
+    }
+    .burger__lang-changer{
+        display: flex;
+        gap: 8px;
+    }
+    .burger__contacts{
+        cursor: pointer;
+    }
+    .burger__list-item {
+        font-family: TT Lakes;
+        font-weight: 500;
+        font-size: 16px;
+        leading-trim: NONE;
+        line-height: 24px;
+        letter-spacing: -0.2px;
+        cursor: pointer;
+    }
+
+    .burger__footer {
+        margin-top: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+    }
+    .burger__mail{
+        font-family: TT Lakes;
+        font-weight: 500;
+        font-size: 16px;
+        leading-trim: NONE;
+        line-height: 24px;
+        letter-spacing: -0.2px;
+
+    }
+    .burger__number{
+        font-family: TT Lakes;
+        font-weight: 700;
+        font-size: 24px;
+        leading-trim: NONE;
+        line-height: 32px;
+        letter-spacing: -0.6px;
+
+    }
+    .button__lang{
+    font-family: TT Lakes;
+        font-weight: 500;
+        font-size: 16px;
+        leading-trim: NONE;
+        line-height: 24px;
+        letter-spacing: -0.2px;
+    
+    }
+    .footer__icon-list {
+        display: flex;
+        
+        gap: 16px;
+    }
+
+    .burger__contacts {
+        margin-bottom: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .burger__list-item_active, .button__lang_active {
+        color:#7E7E82;
+    }
+    .burger__list-item_active {
+        display: flex;
+        align-items: center;
+    }
+    .burger__list-item_active::before {
+        display: block;
+        margin-left: -24px;
+        margin-right: 20px;
+        height: 30px;
+        width: 2px;
+        content: '';
+        background-color: $color-decor ;
+        border: 1px solid $color-decor;
+        border-radius: 0 8px  8px 0;
+    }
+    .header__icon-list {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+    .header__icon-list >:last-child {
+        margin-left: auto;
+    }
+    .button__img {
+        border-radius: 50%;
+    
+    
+    }
+}
+
+
+
+
+@media (min-width: 1366px) {
+    html{
+        display: flex;
+        body{
+            flex: 1;
+            position: absolute;
+            left: 320px
+        }
+    }
+    .burger {
+        left: 0;
+        box-shadow: none;
+
+        .header__icon-list-item:nth-child(1) {
+            display: none;
+        }
+    }
+  }

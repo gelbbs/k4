@@ -1,0 +1,62 @@
+@use '../../styles/variables.scss' as *;
+@use '../../styles/mixins.scss' as *;
+
+.about {
+    position:relative;
+    padding: 0;
+    gap: var(--row-gap );
+
+    &__content{
+        font-family: TT Lakes;
+        font-weight: 400;
+        font-size: 14px;
+        leading-trim: NONE;
+        line-height: 18px;
+        letter-spacing: 0.2px;
+        color: $color-text-primary;
+
+    }
+    &__container{
+        padding: var(--block-padding);
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+    }
+
+    &__button_show-all{
+        padding: 0 !important ;
+    }
+   .tablet, .desktop {
+        display: none;
+    
+
+    }
+}
+ 
+
+
+@media (min-width: 768px) {
+    .about{
+        flex-direction: row;
+        &>*{
+            flex:1;
+        }
+        .tablet {
+            display: inline;
+        }
+        
+    }
+  }
+
+@media (min-width: 1366px) {
+    .about{
+        
+       
+        .desktop {
+            display: inline;
+        }
+        
+    }
+  }
+

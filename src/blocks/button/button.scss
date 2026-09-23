@@ -1,0 +1,67 @@
+@use '../../styles/variables.scss' as *;
+@use '../../styles/mixins.scss' as *;
+
+.button {
+
+    &_show-all {
+        display: flex;
+        align-items: center;
+        font-family: TT Lakes;
+        font-weight: 500;
+        font-size: 16px;
+        leading-trim: NONE;
+        line-height: 24px;
+        letter-spacing: -0.2px;
+        color: $color-text-primary;
+        padding: var(--block-padding);
+        
+        &:hover {
+            color: $color-decor;
+        }
+    }
+   
+    
+
+
+    &.button_accent{
+        background-color: $color-accent;
+        height: fit-content;
+        width: fit-content;
+        font-family: TT Lakes;
+        font-weight: 700;
+        font-size: 12px;
+        leading-trim: NONE;
+        line-height: 24px;
+        letter-spacing: -0.15px;
+        text-align: right;
+        text-transform: uppercase;
+        color: $color-secondary;
+        padding: 4px 12px;
+        border-radius: 16px;
+        display: flex;
+        gap: 16px;
+        align-items: center;
+
+        &::after {
+            content: "";
+    
+            background-image: url(src/assets/icons/dropdown.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            height: 10px;
+            width: 10px;
+
+        }
+    }
+}
+
+
+
+ @media (max-width: 767px) {
+       .technique__button_show-all,
+       .brands__button_show-all
+        {
+        display: none; 
+        }
+    }

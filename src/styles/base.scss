@@ -1,0 +1,155 @@
+@use './variables.scss' as *;
+
+@font-face {
+    font-family: 'TT Lakes';
+    src: url('../assets/fonts/TTLakes-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'TT Lakes';
+    src: url('../assets/fonts/TTLakes-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'TT Lakes';
+    src: url('../assets/fonts/TTLakes-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+html{
+    font-family: TT Lakes;
+    font-weight: 400;
+    font-size: 14px;
+    leading-trim: NONE;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+
+}
+*, *::after, *::before {
+
+    box-sizing: border-box;
+}
+
+body, a, ul, li, button, p, h1,h2, h3, h4, form, input, img, thead, table, tbody, tr, td, th{
+    all: unset;
+
+}
+body {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: var(--column-gap);
+    background-color: $color-primary;
+    &>* {
+        display: flex;
+        flex-direction: column;
+        // border: 3px solid black;
+
+
+    }
+}
+button, a {
+    cursor: pointer;
+}
+
+.show-all {
+    display: flex;
+        // grid-template-columns: repeat(4, minmax(240px, 1fr));
+        // grid-template-rows: repeat(auto, 72px);
+        column-gap: 24px;
+        overflow: initial;
+        grid-auto-rows: initial;
+        grid-auto-columns: initial;
+        min-height:initial; 
+        min-width: initial;
+
+    }
+
+.title_section {
+        padding: var(--block-padding);
+        padding-bottom: 16px ;
+        padding-top: 16px ;
+
+        display: block;
+        color: $color-text-secondary;
+        font-family: TT Lakes;
+        font-weight: 400;
+        font-size: 16px;
+        leading-trim: NONE;
+        line-height: 24px;
+        letter-spacing: -0.2px;
+        text-transform: uppercase;
+        background: $gradient;
+
+    }
+.blur {
+    display: block;
+    opacity: 0;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; 
+    
+    background: rgba(0, 0, 0, 0.1);
+    
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: 
+        opacity 0.5s ease,
+        visibility 0.5s ease;
+
+}
+.blur.blur-active{
+    visibility: visible;
+    opacity: 1;
+}
+
+p, span {
+    white-space: normal
+}
+.button_svg:hover,
+.brands__item:hover,
+.technique__item:hover,
+.button_accent:hover {
+        filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.5));
+}
+
+.nav .nav__list .nav__item:hover {
+    color: $color-decor;
+}
+.prices__another-button:hover,
+.burger__list-item:hover,
+.button__lang:hover,
+.burger__number:hover,
+.burger__mail:hover
+{
+        color: $color-accent;
+
+}
+.button_show-all,
+.button_svg,
+.brands__item,
+.technique__item,
+.button_accent,
+.nav__item,
+.prices__another-button,
+.button__lang,
+.burger__number,
+.burger__mail,
+.burger__list-item {
+    transition: 
+        color 0.4s ease,
+        filter 0.4s ease;
+
+}
+.technique__item:hover {
+    color: $color-primary !important
+}

@@ -1,0 +1,87 @@
+@use '../../styles/variables.scss' as *;
+@use '../../styles/mixins.scss' as *;
+
+
+.brands {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    
+    
+    
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(100px, 1fr));
+        grid-template-rows: repeat(2, auto);
+        column-gap: 24px;
+        overflow: hidden;
+        grid-auto-rows: 0;
+        grid-auto-columns: 0;
+        min-height: 0; 
+        min-width: 0;
+        padding: var(--block-padding);
+        padding-top: 24px;
+
+
+    }    
+    &__item {
+        display: flex;
+    }
+    &__button {
+        display: flex;
+        background-color: $color-secondary;
+        border: 1px solid $color-border;
+        border-radius: 6px;
+        min-width: 240px;
+        flex-grow: 1;
+        max-width: auto;
+        padding: 16px;
+        height: 72px;
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 16px;
+    }
+
+
+    
+
+   
+
+    @media (max-width: 1365px) {
+        .brands__list {
+            grid-template-columns: repeat(3, minmax(220px, 1fr));
+        }
+        .brands__button {
+            min-width: 220px;
+        }
+     
+    }
+    @media (max-width: 768px) {
+    .brands .swiper {
+            display: flex;
+    }
+        .button__show-all {
+            display: none;
+        }
+        .brands__list {
+            display: none;
+        }
+        .brands {
+            gap: 0;
+        }
+    }
+
+}
+
+.show-all {
+        grid-template-columns: repeat(4, minmax(100px, 1fr));
+        grid-template-rows: repeat(auto, 72px);
+        column-gap: 24px;
+        overflow: initial;
+        grid-auto-rows: initial;
+        grid-auto-columns: initial;
+        min-height:initial; 
+        min-width: initial;
+
+    }

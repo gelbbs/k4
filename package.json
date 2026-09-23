@@ -1,0 +1,43 @@
+{
+  "name": "k4",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "browserslist": [
+    "last 2 versions",
+    "> 1%",
+    "not dead",
+    "iOS >= 15",
+    "Android >= 10"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "compile": "sass src/styles.scss dist/styles.css"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.6.1",
+    "postcss": "^8.5.28",
+    "sass": "^1.104.1",
+    "vite": "^8.3.0"
+  },
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "detect-libc": "^2.1.2",
+    "fdir": "^6.5.0",
+    "lightningcss": "^1.33.0",
+    "lightningcss-win32-x64-msvc": "^1.33.0",
+    "nanoid": "^3.3.19",
+    "picocolors": "^1.1.1",
+    "picomatch": "^4.0.7",
+    "rolldown": "^1.2.9",
+    "source-map-js": "^1.2.1",
+    "swiper": "^14.2.0",
+    "tinyglobby": "^0.2.17"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

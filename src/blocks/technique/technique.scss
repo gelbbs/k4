@@ -1,0 +1,84 @@
+@use '../../styles/variables.scss' as *;
+@use '../../styles/mixins.scss' as *;
+
+.technique {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    
+    
+    
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(100px, 1fr));
+        grid-template-rows: repeat(1, auto);
+        column-gap: 24px;
+        overflow: hidden;
+        grid-auto-rows: 0;
+        grid-auto-columns: 0;
+        min-height: 0; 
+        min-width: 0;
+        padding: var(--block-padding);
+        padding-top: 24px;
+
+
+
+    }    
+    &__item {
+        display: flex;
+    }
+    &__button {
+        @include section-button-list;
+        height: 160px;
+        font-family: TT Lakes;
+        font-weight: 500;
+        font-size: 16px;
+        leading-trim: NONE;
+        line-height: 24px;
+        letter-spacing: -0.2px;
+        color: $color-text-primary;
+
+        .button__content{
+            display: block;
+            margin-bottom: auto;
+        }
+        .tecnique__button_decor{
+            margin-top: auto;
+        }
+    }
+    @media (max-width: 1365px) {
+        .technique__list {
+            grid-template-columns: repeat(3, minmax(220px, 1fr));
+        }
+        .technique__button {
+            min-width: 220px;
+        }
+     
+    }
+    @media (max-width: 768px) {
+    .technique .swiper {
+            display: flex;
+    }
+        .button__show-all {
+            display: none;
+        }
+        .technique__list {
+            display: none;
+        }
+        .technique {
+            gap: 0;
+        }
+    }
+
+}
+.show-all {
+        grid-template-columns: repeat(4, minmax(100px, 1fr));
+        grid-template-rows: repeat(auto, 72px);
+        column-gap: 24px;
+        overflow: initial;
+        grid-auto-rows: initial;
+        grid-auto-columns: initial;
+        min-height:initial; 
+        min-width: initial;
+
+    }

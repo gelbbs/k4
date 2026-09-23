@@ -1,0 +1,73 @@
+@use '../../styles/variables.scss' as *;
+@use '../../styles/mixins.scss' as *;
+
+   
+.nav{
+    padding: 0;
+    position: relative;
+    left:0;
+    display: flex;
+    gap: var(--column-gap);
+
+    @include title_decor;
+        
+    
+    .nav__list {
+        display: flex;
+        overflow-x: auto;
+        align-items: center;
+        padding: var(--block-padding);
+        flex-wrap: wrap;
+
+
+        .nav__item{
+
+            @include border-item
+        }
+
+        .nav__item_active {
+            border: 2px solid $color-border-active ;
+            border-radius: 6px;
+            background-color: $color-secondary;
+        }
+    } 
+    &__container1 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .nav__container2 {
+            display: none;
+            align-items: center;
+            gap: 32px;
+            padding: 0 32px;
+
+
+            .nav__button {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-family: TT Lakes;
+                font-weight: 500;
+                font-size: 16px;
+                leading-trim: NONE;
+                line-height: 24px;
+                letter-spacing: -0.2px;
+
+            }
+        }
+    }
+    @media (min-width: 1366px) {
+    
+    .nav__container2{
+    display: flex;
+    }
+
+    .nav__container1{
+        padding-top: 50px;
+    }
+}
+
+}
+
+
